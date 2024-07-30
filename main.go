@@ -23,7 +23,10 @@ func QueueTest() {
 	s.InQueue(6)
 	s.InQueue(4)
 	s.InQueue(3)
-	fmt.Println(s, s.DeQueue(), s)
+	fmt.Println(s)
+	fmt.Println(s.DeQueue())
+	fmt.Println(s.DeQueue())
+	fmt.Println(s)
 }
 
 func main() {

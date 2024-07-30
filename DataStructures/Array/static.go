@@ -1,18 +1,33 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-var staticArray [5]int
+type Static struct {
+	lenght      int
+	staticArray []interface{}
+}
 
-func main() {
-	staticArray[0] = 1
-	staticArray[1] = 22
-	staticArray[2] = 5
-	staticArray[3] = 4
-	staticArray[4] = 3
+func NewStaticArray(lenght int) (*Static, error) {
+	if lenght <= 0 {
+		return nil, fmt.Errorf("lenght should be great then 0")
+	}
+	return &Static{
+		lenght:      lenght,
+		staticArray: make([]interface{}, lenght),
+	}, nil
+}
 
-	staticArray[2] = 4
-	fmt.Println(staticArray, staticArray[2])
+func (o *Static) SetOrUpdate(index int, item interface{}) error {
+	if index < 0 || index >= o.lenght {
+		return fmt.Errorf("invalid index %d", index)
+	}
+	o.staticArray[index] = item
+	return nil
+}
+
+func (o Static) Get(index int) (interface{}, error) {
+	if index < 0 || index >= o.lenght {
+		return nil, fmt.Errorf("invalid index %d", index)
+	}
+	return o.staticArray[index], nil
 }
