@@ -14,5 +14,5 @@ func main() {
 	staticArray[4] = 3
 
 	staticArray[2] = 4
-	fmt.Println(staticArray)
+	fmt.Println(staticArray, staticArray[2])
 }
