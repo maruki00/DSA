@@ -57,9 +57,25 @@ func LinkedLIstTest() {
 
 }
 
-func InsertionSortingTest(items []int) {
+func InsertionSortingTest() {
 
-	items = sorting.InsertionSorting(items)
+	items := []int{1, 6, 3, 78, 32, 5, 7, 98, 1, 8}
+	items = sorting.InsertionSort(items)
+	fmt.Println(items)
+}
+
+func MergeSortingTest() {
+
+	items1 := []int{1, 3, 6, 32, 78}
+	items2 := []int{1, 6, 8, 9, 13, 34, 56, 76, 78}
+	items := sorting.MergeSort(items1, items2)
+	fmt.Println("Merge Sort : ", items)
+}
+
+func BucketSortingTest() {
+
+	items1 := []int{0, 4, 5, 7, 4, 6, 1, 6, 9, 5, 4, 365, 8, 4, 3, 5, 7, 8}
+	items := sorting.BucketSort(items1)
 	fmt.Println(items)
 }
 
@@ -67,6 +83,8 @@ func main() {
 	// StackTest()
 	// QueueTest()
 	//LinkedLIstTest()
-	items := []int{1, 6, 3, 78, 32, 5, 7, 98, 1, 8}
-	InsertionSortingTest(items)
+
+	//InsertionSortingTest()
+	//MergeSortingTest()
+	BucketSortingTest()
 }
