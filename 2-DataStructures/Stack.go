@@ -1,14 +1,21 @@
 package datastructures
 
-var stack []interface{}
-
-func Push(item interface{}) {
-	stack = append(stack, item)
+type Stack struct {
+	items []interface{}
 }
 
-func Pop() interface{} {
-	lastIndex := len(stack) - 1
-	item := stack[lastIndex]
-	stack = stack[:lastIndex-2]
+func New() *Stack {
+	return &Stack{
+		items: make([]interface{}, 0),
+	}
+}
+func (o *Stack) Push(item interface{}) {
+	o.items = append(o.items, item)
+}
+
+func (o *Stack) Pop() interface{} {
+	lastIndex := len(o.items) - 1
+	item := o.items[lastIndex]
+	o.items = o.items[:lastIndex-2]
 	return item
 }
