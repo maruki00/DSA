@@ -35,7 +35,19 @@ func LinkedLIstTest() {
 	l.Add(4)
 	l.Add(40)
 	l.Add(54)
+	l.Add(54)
+	l.Add(54)
+	l.Delete(54)
+	l.Delete(54)
+	l.Delete(54)
+	l.Delete(40)
+	l.Add(54)
+	l.Add(54)
+	l.Add(54)
+	l.Add(54)
+	l.Update(54, 99)
 	l.Print()
+
 }
 
 func main() {

@@ -17,37 +17,77 @@ func NewLinkedList() *List {
 }
 
 func (o *List) Add(item interface{}) {
+
 	node := &node{item: item, next: nil}
+	if o.head == nil || o.tail == nil {
+		print("First Try \n")
+		o.head = node
+		o.tail = node
+		return
+	}
 	tmp := o.tail
 	tmp.next = node
 	o.tail = tmp.next
 }
 
 func (o *List) Delete(item interface{}) {
-	tmp := o.head
-
-	for tmp.next.next != nil {
-		if tmp.next.item == item {
-			tmp = tmp.next.next
-		}
+	if o.head == nil {
+		return
 	}
 
-	o.tail = tmp.next.next
+	if o.head.item == item {
+		o.head = o.head.next
+		return
+	}
+
+	// previos := o.head
+
+	// for previos.next.next != nil {
+	// 	if previos.next.item != item {
+	// 		previos = previos.next
+	// 	} else {
+	// 		previos.next = previos.next.next
+	// 	}
+	// }
+
+	previos := o.head
+	for previos.next != nil {
+
+		if previos.next.item != item {
+			// if previos.next.item != item {
+			// 	o.tail = previos.next
+			// }
+
+			previos = previos.next
+
+		} else {
+			previos.next = previos.next.next
+		}
+
+	}
+
+	x := o.head
+	for x.next != nil {
+		x = x.next
+	}
+	o.tail = x
 }
 
-func (o *List) Update(item interface{}) {
+func (o *List) Update(old, new interface{}) {
 	tmp := o.head
 
 	for tmp != nil {
-		if tmp.item == item {
-			tmp.item = item
+		if tmp.item == old {
+			tmp.item = new
 		}
+		tmp = tmp.next
 	}
 }
 
 func (o *List) Print() {
 	t := o.head
 	for t != nil {
-		fmt.Printf("value : %v\n", t.item)
+		fmt.Printf("value : %v - %v\n", t.item, o.tail)
+		t = t.next
 	}
 }
