@@ -1,6 +1,7 @@
 package main
 
 import (
+	Linkedlist "DSA/DataStructures/LinkedList"
 	queue "DSA/DataStructures/Queue"
 	stack "DSA/DataStructures/Stack"
 	"fmt"
@@ -29,7 +30,16 @@ func QueueTest() {
 	fmt.Println(s)
 }
 
+func LinkedLIstTest() {
+	l := Linkedlist.NewLinkedList()
+	l.Add(4)
+	l.Add(40)
+	l.Add(54)
+	l.Print()
+}
+
 func main() {
-	StackTest()
-	QueueTest()
+	// StackTest()
+	// QueueTest()
+	LinkedLIstTest()
 }
