@@ -79,6 +79,13 @@ func BucketSortingTest() {
 	fmt.Println(items)
 }
 
+func CustomSort() {
+
+	items1 := []int{0, 4, 5, 7, 4, 6, 1, 6, 9, 5, 4, 365, 8, 4, 3, 5, 7, 8}
+	items := sorting.CustomSort(items1)
+	fmt.Println(items)
+}
+
 func main() {
 	// StackTest()
 	// QueueTest()
@@ -86,5 +93,6 @@ func main() {
 
 	//InsertionSortingTest()
 	//MergeSortingTest()
-	BucketSortingTest()
+	// BucketSortingTest()
+	CustomSort()
 }
