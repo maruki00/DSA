@@ -1,6 +1,7 @@
 package main
 
 import (
+	sorting "DSA/Algorithms/Sorting"
 	Linkedlist "DSA/DataStructures/LinkedList"
 	queue "DSA/DataStructures/Queue"
 	stack "DSA/DataStructures/Stack"
@@ -56,8 +57,16 @@ func LinkedLIstTest() {
 
 }
 
+func InsertionSortingTest(items []int) {
+
+	items = sorting.InsertionSorting(items)
+	fmt.Println(items)
+}
+
 func main() {
 	// StackTest()
 	// QueueTest()
-	LinkedLIstTest()
+	//LinkedLIstTest()
+	items := []int{1, 6, 3, 78, 32, 5, 7, 98, 1, 8}
+	InsertionSortingTest(items)
 }
