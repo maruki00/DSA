@@ -11,7 +11,7 @@ var (
 
 var staticArray []int
 
-func remove(index int) error {
+func Remove(index int) error {
 	if index < 0 || index >= len(staticArray) {
 		return InvalidIndexError
 	}
@@ -19,11 +19,11 @@ func remove(index int) error {
 	return nil
 }
 
-func add(item int) {
+func Add(item int) {
 	staticArray = append(staticArray, item)
 }
 
-func getAt(index int) (int, error) {
+func GetAt(index int) (int, error) {
 	if index < 0 || index >= len(staticArray) {
 		return -1, InvalidIndexError
 	}
@@ -39,10 +39,20 @@ func Update(index int, item int) error {
 }
 
 func main() {
-	add(1)
-	add(1)
-	add(1)
-	add(1)
-	add(3)
-	fmt.Println(staticArray)
+	Add(1)
+	Add(1)
+	Add(1)
+	Add(1)
+	Add(3)
+	err := Remove(4)
+	if err != nil {
+		panic(err.Error())
+	}
+	value, err := GetAt(3)
+	if err != nil {
+		panic(err.Error())
+	}
+	err = Update(3, 4)
+
+	fmt.Println(staticArray, value)
 }
