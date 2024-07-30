@@ -1,7 +1,6 @@
 package queue
 
 import (
-	"fmt"
 	"sync"
 )
 
@@ -24,8 +23,6 @@ func (o *Queue) InQueue(item interface{}) {
 func (o *Queue) DeQueue() interface{} {
 	o.Lock()
 	lastIndex := len(o.items) - 1
-
-	fmt.Println(o.items)
 	item := o.items[lastIndex]
 	o.items = o.items[:lastIndex]
 	o.Unlock()
