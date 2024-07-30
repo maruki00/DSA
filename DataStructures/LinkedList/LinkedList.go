@@ -52,25 +52,20 @@ func (o *List) Delete(item interface{}) {
 
 	previos := o.head
 	for previos.next != nil {
-
+		o.tail = previos
 		if previos.next.item != item {
-			// if previos.next.item != item {
-			// 	o.tail = previos.next
-			// }
-
 			previos = previos.next
-
 		} else {
 			previos.next = previos.next.next
 		}
 
 	}
 
-	x := o.head
-	for x.next != nil {
-		x = x.next
-	}
-	o.tail = x
+	// x := o.head
+	// for x.next != nil {
+	// 	x = x.next
+	// }
+	// o.tail = x
 }
 
 func (o *List) Update(old, new interface{}) {
