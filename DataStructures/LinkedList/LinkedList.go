@@ -39,17 +39,6 @@ func (o *List) Delete(item interface{}) {
 		o.head = o.head.next
 		return
 	}
-
-	// previos := o.head
-
-	// for previos.next.next != nil {
-	// 	if previos.next.item != item {
-	// 		previos = previos.next
-	// 	} else {
-	// 		previos.next = previos.next.next
-	// 	}
-	// }
-
 	previos := o.head
 	for previos.next != nil {
 		o.tail = previos
@@ -60,12 +49,6 @@ func (o *List) Delete(item interface{}) {
 		}
 
 	}
-
-	// x := o.head
-	// for x.next != nil {
-	// 	x = x.next
-	// }
-	// o.tail = x
 }
 
 func (o *List) Update(old, new interface{}) {

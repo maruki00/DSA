@@ -46,6 +46,12 @@ func LinkedLIstTest() {
 	l.Add(54)
 	l.Add(54)
 	l.Update(54, 99)
+	l.Add(54)
+
+	l.Add(54)
+
+	l.Add(54)
+
 	l.Print()
 
 }
