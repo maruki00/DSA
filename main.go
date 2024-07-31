@@ -1,6 +1,7 @@
 package main
 
 import (
+	searching "DSA/Algorithms/Searching"
 	sorting "DSA/Algorithms/Sorting"
 	Linkedlist "DSA/DataStructures/LinkedList"
 	queue "DSA/DataStructures/Queue"
@@ -86,6 +87,12 @@ func CustomSort() {
 	fmt.Println(items)
 }
 
+func BinarySearchTest() {
+	items := []int{1, 4, 5, 7, 8, 9, 10, 12, 23, 34}
+	res := searching.BinarySearch(items, 19)
+	fmt.Println("Binary Search : ", res)
+}
+
 func main() {
 	// StackTest()
 	// QueueTest()
@@ -94,5 +101,7 @@ func main() {
 	//InsertionSortingTest()
 	//MergeSortingTest()
 	// BucketSortingTest()
-	CustomSort()
+	// CustomSort()
+
+	BinarySearchTest()
 }
