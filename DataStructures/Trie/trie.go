@@ -17,7 +17,7 @@ func insert(node *Node, value int) *Node {
 		return &Node{value: value, Left: nil, Right: nil}
 	}
 
-	if node.value < value {
+	if node.value > value {
 		node.Left = insert(node.Left, value)
 
 	} else {
@@ -26,9 +26,9 @@ func insert(node *Node, value int) *Node {
 	return node
 
 }
-func (o *Node) Insert(root *Node, value int) {
+func (o *Node) Insert(value int) {
 
-	insert(root, value)
+	insert(o, value)
 }
 
 func printTrie(node *Node) {
@@ -36,8 +36,8 @@ func printTrie(node *Node) {
 		return
 	}
 	fmt.Printf("Val : %v\n", node.value)
-	print(node.Left)
-	print(node.Right)
+	printTrie(node.Left)
+	printTrie(node.Right)
 }
 func (o *Node) Print() {
 	printTrie(o)

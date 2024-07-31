@@ -6,6 +6,7 @@ import (
 	Linkedlist "DSA/DataStructures/LinkedList"
 	queue "DSA/DataStructures/Queue"
 	stack "DSA/DataStructures/Stack"
+	trie "DSA/DataStructures/Trie"
 	"fmt"
 )
 
@@ -93,15 +94,27 @@ func BinarySearchTest() {
 	fmt.Println("Binary Search : ", res)
 }
 
+func TrieTest() {
+	n := trie.NewTrie(5)
+	n.Insert(4)
+	n.Insert(6)
+	n.Insert(3)
+	n.Insert(1)
+	n.Insert(10)
+
+	n.Print()
+}
+
 func main() {
 	// StackTest()
 	// QueueTest()
 	//LinkedLIstTest()
-
+	TrieTest()
 	//InsertionSortingTest()
 	//MergeSortingTest()
 	// BucketSortingTest()
 	// CustomSort()
 
-	BinarySearchTest()
+	// BinarySearchTest()
+
 }
