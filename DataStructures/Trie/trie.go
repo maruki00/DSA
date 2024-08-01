@@ -8,6 +8,10 @@ type Node struct {
 	Right *Node
 }
 
+func (o *Node) GetValue() int {
+	return o.value
+}
+
 func NewTrie(value int) *Node {
 	return &Node{value: value, Left: nil, Right: nil}
 }

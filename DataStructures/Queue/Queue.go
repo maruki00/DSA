@@ -9,6 +9,10 @@ type Queue struct {
 	sync.Mutex
 }
 
+func (o *Queue) IsEmpty() bool {
+	return len(o.items) == 0
+}
+
 func NewQueue() *Queue {
 	return &Queue{
 		items: []interface{}{},
