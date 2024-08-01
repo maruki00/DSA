@@ -102,11 +102,22 @@ func TrieTest() {
 	n.Insert(3)
 	n.Insert(1)
 	n.Insert(10)
-	n.Print()
+	//n.Print()
 	n.Remove(5)
 	n.Remove(1)
 	print("----------------\n")
-	n.Print()
+	//n.Print()
+
+	trees.BFS(n)
+}
+
+func BFSTest() {
+	n := trie.NewTrie(5)
+	n.Insert(4)
+	n.Insert(6)
+	n.Insert(3)
+	n.Insert(1)
+	n.Insert(10)
 
 	trees.BFS(n)
 }
@@ -115,12 +126,12 @@ func main() {
 	// StackTest()
 	// QueueTest()
 	//LinkedLIstTest()
-	//TrieTest()
+	// TrieTest()
 	//InsertionSortingTest()
 	//MergeSortingTest()
 	// BucketSortingTest()
 	// CustomSort()
 
 	// BinarySearchTest()
-
+	BFSTest()
 }

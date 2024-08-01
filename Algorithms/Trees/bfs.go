@@ -36,7 +36,7 @@ func BFS(root *trie.Node) {
 		q.InQueue(root)
 	}
 	for !q.IsEmpty() {
-		fmt.Println("level ", level)
+		fmt.Println("---------------level : ", level, "---------------------")
 
 		for range len(q.Items()) {
 
