@@ -5,7 +5,7 @@ import (
 )
 
 type Queue struct {
-	items []interface{}
+	items []any
 	sync.Mutex
 }
 
@@ -15,7 +15,7 @@ func (o *Queue) IsEmpty() bool {
 
 func NewQueue() *Queue {
 	return &Queue{
-		items: make([]interface{}, 0),
+		items: make([]any, 0),
 	}
 }
 func (o *Queue) InQueue(item interface{}) {
