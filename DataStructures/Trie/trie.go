@@ -67,8 +67,6 @@ func remove(root *Node, value int) *Node {
 		}
 	}
 	return root
-
-	return nil
 }
 
 func (o *Node) Insert(value int) {
@@ -77,7 +75,7 @@ func (o *Node) Insert(value int) {
 }
 
 func (o *Node) Remove(value int) {
-	_ = remove(o, value)
+	remove(o, value)
 }
 
 func (o *Node) Print() {

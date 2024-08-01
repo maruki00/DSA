@@ -101,7 +101,10 @@ func TrieTest() {
 	n.Insert(3)
 	n.Insert(1)
 	n.Insert(10)
-
+	n.Print()
+	n.Remove(5)
+	n.Remove(1)
+	print("----------------\n")
 	n.Print()
 }
 
@@ -109,7 +112,7 @@ func main() {
 	// StackTest()
 	// QueueTest()
 	//LinkedLIstTest()
-	TrieTest()
+	//TrieTest()
 	//InsertionSortingTest()
 	//MergeSortingTest()
 	// BucketSortingTest()
