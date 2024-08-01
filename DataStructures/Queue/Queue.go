@@ -15,7 +15,7 @@ func (o *Queue) IsEmpty() bool {
 
 func NewQueue() *Queue {
 	return &Queue{
-		items: []interface{}{},
+		items: make([]interface{}, 0),
 	}
 }
 func (o *Queue) InQueue(item interface{}) {

@@ -3,6 +3,7 @@ package main
 import (
 	searching "DSA/Algorithms/Searching"
 	sorting "DSA/Algorithms/Sorting"
+	trees "DSA/Algorithms/Trees"
 	Linkedlist "DSA/DataStructures/LinkedList"
 	queue "DSA/DataStructures/Queue"
 	stack "DSA/DataStructures/Stack"
@@ -106,6 +107,8 @@ func TrieTest() {
 	n.Remove(1)
 	print("----------------\n")
 	n.Print()
+
+	trees.BFS(n)
 }
 
 func main() {
