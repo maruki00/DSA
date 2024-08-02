@@ -1,24 +1,23 @@
 package graph
 
-type Graph struct {
+type MatrixGraph struct {
 	nodes [][]int
 }
 
-func NewGraph(c, r int) *Graph {
+func NewGraph(c, r int) *MatrixGraph {
 	nodes := make([][]int, r, 0)
 	for i := range r {
 		nodes[i] = make([]int, c, 0)
 	}
-	return &Graph{
+	return &MatrixGraph{
 		nodes: nodes,
 	}
-
 }
 
-func (this *Graph) Insert(from, to int) {
+func (this *MatrixGraph) Insert(from, to int) {
 	this.nodes[from][to] = 1
 }
 
-func (this *Graph) Delete(from, to int) {
+func (this *MatrixGraph) Delete(from, to int) {
 	this.nodes[from][to] = 0
 }
