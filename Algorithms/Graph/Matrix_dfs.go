@@ -1,6 +1,6 @@
 package graph
 
-func dfs(grid [][]int, r, c int, visited map[[2]int]bool) int {
+func MatrixDFS(grid [][]int, r, c int, visited map[[2]int]bool) int {
 
 	rows, cols := len(grid), len(grid[0])
 
