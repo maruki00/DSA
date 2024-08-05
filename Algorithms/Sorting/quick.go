@@ -2,7 +2,7 @@ package sorting
 
 func QuickSort(arr []int) []int {
 
-	if len(arr) == 1 {
+	if len(arr) <= 1 {
 		return arr
 	}
 	pivot := arr[len(arr)-1]
@@ -16,6 +16,5 @@ func QuickSort(arr []int) []int {
 		}
 		left = append(left, item)
 	}
-
-	return append(append(left, pivot), right...)
+	return append(append(QuickSort(left), pivot), QuickSort(right)...)
 }

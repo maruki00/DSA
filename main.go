@@ -122,6 +122,13 @@ func BFSTest() {
 	trees.BFS(n)
 }
 
+func QuickSortTest() {
+	items := []int{
+		1, 4, 6, 7, 3, 6, 7, 0, 5, 4,
+	}
+	fmt.Println("result : ", sorting.QuickSort(items))
+}
+
 func main() {
 	// StackTest()
 	// QueueTest()
@@ -133,5 +140,6 @@ func main() {
 	// CustomSort()
 
 	// BinarySearchTest()
-	BFSTest()
+	// BFSTest()
+	QuickSortTest()
 }
